@@ -1,14 +1,20 @@
 #include <iostream>
-
-
 #include <conio.h>
 
+
+#include "Matriz.h"
+
 using namespace std;
+
+Matriz *mat = new Matriz();
+
+
 
 int main()
 {
     bool men = true;
     bool men2 = true;
+    bool existe= false;
     bool activo;
     bool ambos;
     bool ambos1;
@@ -20,14 +26,14 @@ int main()
 
         string opcionjug1="";
         string opcionjug2="";
-        string jugador;
+        string usuario, contra, nombre,depar,empre;
 
 
 
         string ur = "";
         system("cls");
         cout << "***********RENTA DE ACTIVOS***********\n\n";
-        cout << "1. Agregar nuevo jugador" << endl;
+        cout << "1. Agregar nuevo usuario" << endl;
         cout << "2. Scoreboard" << endl;
         cout << "3. Iniciar juego" << endl;
         cout << "4. Lectura de Archivo" << endl;
@@ -41,10 +47,22 @@ int main()
         {
         case 1:
             system("cls");
-            cout << "---------- NUEVO JUGADOR------------"<< endl;
-            cout << "Ingrese nombre jugador"<< endl;
-            cin >> jugador;
-
+            cout << "---------- NUEVO USUARIO------------"<< endl;
+            cout << "Ingrese nombre usuario"<< endl;
+            cin >> usuario;
+            cout << "Ingrese contraseña"<< endl;
+            cin >> contra;
+            cout << "Ingrese nombre completo"<< endl;
+            cin >> nombre;
+            cout << "Ingrese Departamento"<< endl;
+            cin >> depar;
+            cout << "Ingrese Empresa"<< endl;
+            cin >> empre;
+            existe= mat->buscarUsuario(depar,empre,usuario);
+            if(existe)
+                cout << "Usuario ya existe en esa empresa y departamento"<< endl;
+            else
+                mat->insertar(depar,empre,usuario,contra,nombre);
             _getch();
             break;
         case 2:

@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1592440756 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\main.cpp
+	<iostream>
+	<conio.h>
+	"Matriz.h"
+
+1592407218 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodom.cpp
+	"Nodom.h"
+
+1592407219 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodom.h
+	<iostream>
+	<string>
+	"Usuario.h"
+
+1592440626 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\src\usuario.cpp
+	"Usuario.h"
+
+1592300732 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\include\usuario.h
+	<iostream>
+
+1592440910 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.cpp
+	"Matriz.h"
+
+1592440457 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.h
+	<iostream>
+	<string>
+	<fstream>
+	<cstdlib>
+	"Usuario.h"
+	"Nodom.h"
+
