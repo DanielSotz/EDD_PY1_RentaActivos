@@ -11,6 +11,7 @@ using namespace std;
 
 #include "Usuario.h"
 #include "Nodom.h"
+#include "ArbolAVL.h"
 
 class Matriz
 {

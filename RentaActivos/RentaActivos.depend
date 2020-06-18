@@ -1,16 +1,17 @@
 # depslib dependency file v1.0
-1592487549 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\main.cpp
+1592504431 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\main.cpp
 	<iostream>
 	<conio.h>
 	<stdlib.h>
 	<time.h>
 	"Matriz.h"
+	"Nodom.h"
 	"ArbolAVL.h"
 
-1592407218 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodom.cpp
+1592504431 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodom.cpp
 	"Nodom.h"
 
-1592481299 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodom.h
+1592504562 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodom.h
 	<iostream>
 	<string>
 	"Usuario.h"
@@ -22,16 +23,17 @@
 1592474567 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\include\usuario.h
 	<iostream>
 
-1592487536 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.cpp
+1592504431 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.cpp
 	"Matriz.h"
 
-1592484470 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.h
+1592497038 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.h
 	<iostream>
 	<string>
 	<fstream>
 	<cstdlib>
 	"Usuario.h"
 	"Nodom.h"
+	"ArbolAVL.h"
 
 1592475338 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodoavl.cpp
 	"NodoAVL.h"
@@ -40,7 +42,7 @@
 	<iostream>
 	<string>
 
-1592482039 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\arbolavl.h
+1592504430 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\arbolavl.h
 	<iostream>
 	<algorithm>
 	<string>
@@ -48,6 +50,6 @@
 	<cstdlib>
 	"NodoAVL.h"
 
-1592482039 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\arbolavl.cpp
+1592504447 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\arbolavl.cpp
 	"ArbolAVL.h"
 

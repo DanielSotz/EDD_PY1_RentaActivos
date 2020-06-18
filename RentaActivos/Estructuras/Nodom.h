@@ -14,9 +14,9 @@ class Nodom
 {
     public:
         Nodom();
-        Nodom(Usuario*);
+        Nodom(Usuario*,ArbolAVL*);
 
-        ArbolAVL* arbol=0;
+        ArbolAVL* arbol;
 
         Usuario *usuario =0;
         string empresa;

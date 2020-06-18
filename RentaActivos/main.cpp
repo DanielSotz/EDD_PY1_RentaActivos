@@ -5,6 +5,7 @@
 #include <time.h>
 
 #include "Matriz.h"
+#include "Nodom.h"
 #include "ArbolAVL.h"
 
 
@@ -12,7 +13,10 @@
 using namespace std;
 
 Matriz *mat = new Matriz();
-ArbolAVL *arb = new ArbolAVL();
+
+ArbolAVL *arbol;
+
+
 
 string generarCodigo()
 {
@@ -29,7 +33,6 @@ string generarCodigo()
         cod= vec[num];
 
         codigo=codigo+cod;
-        cout << num<< endl;
     }
     return codigo;
 }
@@ -51,9 +54,10 @@ int main()
     bool men = true;
     bool men2 = true;
     bool existe= false;
-    bool activo;
-    bool ambos;
-    bool ambos1;
+
+    Nodom *us = new Nodom();
+
+
 
 
     while (men)
@@ -63,6 +67,8 @@ int main()
         string opcionjug1="";
         string opcionjug2="";
         string usuario, contra, nombre,depar,empre;
+        string idactivo, activo,descripcion;
+        string idtransaccion, fecha, tiempo;
 
         system("cls");
         cout << "-------------- RENTA DE ACTIVOS -------------"<< endl;
@@ -96,7 +102,7 @@ int main()
                     {
                         system("cls");
                         cout << "-------------- Renta de Activos -------------"<< endl;
-                        cout << "--------------- Menu Administrador --------------"<< endl;
+                        cout << "------------- Menu Administrador ------------"<< endl;
                         cout << "1. Registrar Usuario"<< endl;
                         cout << "2. Reporte Matriz Dispersa"<< endl;
                         cout << "3. Reporte Activos Disponibles de un Departamento"<< endl;
@@ -132,8 +138,6 @@ int main()
                             {
                                 mat->insertar(depar,empre,usuario,contra,nombre);
                                 _getch();
-                                arb->insertar(usuario,contra,nombre);
-                                _getch();
                             }
                             _getch();
                             break;
@@ -155,17 +159,69 @@ int main()
                             men2=false;
                             break;
                         }
+
                     }
 
                 }
-
+                else
+                    cout << "Contraseña de admin incorrecta"<< endl;
             }
 
             else
             {
                 existe= mat->buscarUsuario(depar,empre,usuario);
                 if(existe)
-                    cout << "Usuario ingresa"<< endl;
+                {
+                    us= mat->buscarUsuario2(depar,empre,usuario);
+                    men2=true;
+                    while(men2)
+                    {
+                        system("cls");
+                        cout << "-------------- Renta de Activos -------------"<< endl;
+                        cout << "-------------"<< usuario <<"-------------" <<endl;
+                        cout << "1. Agregar activo"<< endl;
+                        cout << "2. Eliminar activo"<< endl;
+                        cout << "3. Modificar activo"<< endl;
+                        cout << "4. Rentar Activo"<< endl;
+                        cout << "5. Activos Rentados"<< endl;
+                        cout << "6. Mis Activos Rentados"<< endl;
+                        cout << "7. Cerrar Sesión"<< endl;
+                        cout << "Selecciona una opcion\n"; cin >> opcion;
+                        cout << "opcion: " << opcion << endl;
+
+                        switch(opcion)
+                        {
+                        case 1:
+                            system("cls");
+                            cout << "---------- Agregar Activo------------"<< endl;
+                            cout << "Ingrese Nombre Activo"<< endl;
+                            cin >> activo;
+                            cout << "Ingrese Descripcion"<< endl;
+                            cin >> descripcion;
+                            idactivo = "123";
+                            us->arbol->insertar(activo,descripcion,idactivo);
+
+
+                            _getch();
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                        case 4:
+                            break;
+                        case 5:
+                            break;
+                        case 6:
+                            break;
+                        default:
+                            men2=false;
+                            break;
+                        }
+
+
+                    }
+                }
                 else
                     cout << "Usuario no esta registrado"<< endl;
             }
@@ -175,59 +231,30 @@ int main()
         case 2:
             system("cls");
             cout << "-------------- Renta de Activos -------------"<< endl;
-            cout << "--------------- INICIAR SESION --------------"<< endl;
-            cout << "Ingrese usuario"<< endl;
-            cin >> usuario;
-            cout << "Ingrese contraseña"<< endl;
-            cin >> contra;
-            existe= mat->buscarUsuario(depar,empre,usuario);
-            if(usuario.compare("admin")==0)
-            {
-                if(contra.compare("123"))
-                    cout << "ADMINISTRADOR INGRESO"<< endl;
-            }
-            else
-            {
-                if(existe)
-                cout << "Usuario ya existe en esa empresa y departamento"<< endl;
-            else
-                mat->insertar(depar,empre,usuario,contra,nombre);
-                arb->insertar(usuario,contra,nombre);
+            cout << "--------------- activos --------------"<< endl;
 
-            }
+            cout << "Ingrese activo"<< endl;
+            cin >> usuario;
+            cout << "Ingrese desc"<< endl;
+            cin >> contra;
+
+            //Nodom *us = mat->buscarUsuario2(depar,empre,usuario);
+            //arb = new ArbolAVL();
+            //arb->insertar(activo,descripcion,idactivo);
+            //cout<< us->departamento;
+
+
+
+
 
 
             _getch();
             break;
         case 3:
             system("cls");
-            cout << "---------- NUEVO USUARIO------------"<< endl;
-            cout << "Ingrese nombre usuario"<< endl;
-            cin >> usuario;
-            cout << "Ingrese contraseña"<< endl;
-            cin >> contra;
-            cout << "Ingrese nombre completo"<< endl;
-            cin >> nombre;
-            cout << "Ingrese Departamento"<< endl;
-            cin >> depar;
-            cout << "Ingrese Empresa"<< endl;
-            cin >> empre;
-            existe= mat->buscarUsuario(depar,empre,usuario);
-            if(existe)
-                cout << "Usuario ya existe en esa empresa y departamento"<< endl;
-            else
-                mat->insertar(depar,empre,usuario,contra,nombre);
-                arb->insertar(usuario,contra,nombre);
-
-
-            ambos=true;
-            activo=true;
-
-
-            system("cls");
             cout << "--------------J U E G O-------------"<< endl;
 
-            cout << "\n--------- Datos Cola\n";
+
 
             cout<< " Fichas ingresadas aletorias correctamente "<<endl;
 

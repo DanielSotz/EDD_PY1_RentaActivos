@@ -43,7 +43,8 @@ Nodom* Matriz::BuscarCol(string departamento)
 void Matriz::insertar(string departamento, string empresa, string usuario, string contra, string nombre)
 {
     Usuario *user = new Usuario(usuario,contra,nombre);
-	Nodom* nuevo = new Nodom(user);
+    ArbolAVL* arbol = new ArbolAVL();
+	Nodom* nuevo = new Nodom(user,arbol);
 	Nodom* NodoCol = BuscarCol(departamento);
 	Nodom* NodoFila = BuscarFila(empresa);
 	nuevo->departamento = departamento;
@@ -218,11 +219,11 @@ Nodom* Matriz::buscarUsuario2(string departamento, string empresa, string usuari
 {
     Nodom* NodoCol = BuscarCol(departamento);
 	Nodom* NodoFila = BuscarFila(empresa);
-	Nodom* temp = NULL;
+	Nodom* temp = raiz;
 
 	if (NodoCol == NULL && NodoFila == NULL)
     {
-        return temp;
+        return nullptr;
     }
     else if( NodoCol != NULL && NodoFila != NULL)
     {
