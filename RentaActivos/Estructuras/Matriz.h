@@ -6,6 +6,9 @@
 #include <fstream>
 #include <cstdlib>
 
+using namespace std;
+
+
 #include "Usuario.h"
 #include "Nodom.h"
 

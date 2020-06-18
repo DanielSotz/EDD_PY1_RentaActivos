@@ -3,10 +3,14 @@
 
 
 #include "Matriz.h"
+#include "ArbolAVL.h"
+
+
 
 using namespace std;
 
 Matriz *mat = new Matriz();
+ArbolAVL *arb = new ArbolAVL();
 
 
 
@@ -63,6 +67,7 @@ int main()
                 cout << "Usuario ya existe en esa empresa y departamento"<< endl;
             else
                 mat->insertar(depar,empre,usuario,contra,nombre);
+                arb->insertar(usuario,contra,nombre);
             _getch();
             break;
         case 2:

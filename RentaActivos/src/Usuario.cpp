@@ -7,3 +7,4 @@ Usuario::Usuario(string user, string contra, string nombre)
     this->contrasenia = contra;
 }
 
+

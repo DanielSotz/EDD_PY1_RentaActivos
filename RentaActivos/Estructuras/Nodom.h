@@ -5,6 +5,7 @@
 #include<string>
 
 #include "Usuario.h"
+#include "ArbolAVL.h"
 
 using namespace std;
 
@@ -14,6 +15,8 @@ class Nodom
     public:
         Nodom();
         Nodom(Usuario*);
+
+        ArbolAVL* arbol=0;
 
         Usuario *usuario =0;
         string empresa;

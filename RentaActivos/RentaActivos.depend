@@ -1,31 +1,51 @@
 # depslib dependency file v1.0
-1592440756 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\main.cpp
+1592481917 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\main.cpp
 	<iostream>
 	<conio.h>
 	"Matriz.h"
+	"ArbolAVL.h"
 
 1592407218 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodom.cpp
 	"Nodom.h"
 
-1592407219 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodom.h
+1592481299 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodom.h
 	<iostream>
 	<string>
 	"Usuario.h"
+	"ArbolAVL.h"
 
-1592440626 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\src\usuario.cpp
+1592474533 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\src\usuario.cpp
 	"Usuario.h"
 
-1592300732 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\include\usuario.h
+1592474567 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\include\usuario.h
 	<iostream>
 
 1592440910 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.cpp
 	"Matriz.h"
 
-1592440457 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.h
+1592481407 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.h
 	<iostream>
 	<string>
 	<fstream>
 	<cstdlib>
 	"Usuario.h"
 	"Nodom.h"
+
+1592475338 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodoavl.cpp
+	"NodoAVL.h"
+
+1592481401 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodoavl.h
+	<iostream>
+	<string>
+
+1592482039 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\arbolavl.h
+	<iostream>
+	<algorithm>
+	<string>
+	<fstream>
+	<cstdlib>
+	"NodoAVL.h"
+
+1592481882 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\arbolavl.cpp
+	"ArbolAVL.h"
 

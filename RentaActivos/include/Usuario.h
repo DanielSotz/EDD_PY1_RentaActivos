@@ -10,6 +10,8 @@ class Usuario
         Usuario(string,string,string);
 
         string idusuario, nombre, contrasenia;
+
+
 };
 
 #endif // USUARIO_H
