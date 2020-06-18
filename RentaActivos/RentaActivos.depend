@@ -1,7 +1,9 @@
 # depslib dependency file v1.0
-1592483019 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\main.cpp
+1592487549 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\main.cpp
 	<iostream>
 	<conio.h>
+	<stdlib.h>
+	<time.h>
 	"Matriz.h"
 	"ArbolAVL.h"
 
@@ -20,7 +22,7 @@
 1592474567 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\include\usuario.h
 	<iostream>
 
-1592484470 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.cpp
+1592487536 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.cpp
 	"Matriz.h"
 
 1592484470 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.h
