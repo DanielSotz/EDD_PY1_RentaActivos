@@ -4,6 +4,10 @@ Matriz::Matriz()
 {
     raiz = new Nodom();
     raiz->departamento="RAIZ";
+    raiz->empresa="RAIZ";
+    Usuario *user = new Usuario("admin","123","admin");
+    raiz->usuario = user;
+
     tamanio=0;
 }
 
@@ -210,3 +214,38 @@ bool Matriz::buscarUsuario(string departamento, string empresa, string usuario)
     return existe;
 }
 
+Nodom* Matriz::buscarUsuario2(string departamento, string empresa, string usuario)
+{
+    Nodom* NodoCol = BuscarCol(departamento);
+	Nodom* NodoFila = BuscarFila(empresa);
+	Nodom* temp = NULL;
+
+	if (NodoCol == NULL && NodoFila == NULL)
+    {
+        return temp;
+    }
+    else if( NodoCol != NULL && NodoFila != NULL)
+    {
+        Nodom* temp = NodoCol;
+
+        while(temp != NULL)
+        {
+            if(temp->empresa == empresa)
+            {
+             break;
+            }
+            temp = temp->abajo;
+        }
+
+        while(temp!= NULL)
+        {
+            if(temp->usuario->idusuario == usuario)
+            {
+                break;
+            }
+            temp = temp->atras;
+        }
+    }
+
+    return temp;
+}

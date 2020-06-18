@@ -33,6 +33,8 @@ class Matriz
 
         bool buscarUsuario(string, string, string);
 
+        Nodom* buscarUsuario2(string, string, string);
+
 
 
 };
