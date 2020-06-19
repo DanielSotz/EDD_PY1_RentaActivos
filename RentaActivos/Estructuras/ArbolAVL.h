@@ -15,7 +15,7 @@ using namespace std;
 class ArbolAVL
 {
     public:
-        NodoAVL * root;
+        NodoAVL *root;
         int size;
 
         ArbolAVL();
@@ -32,6 +32,15 @@ class ArbolAVL
         NodoAVL* eliminar(string);
         NodoAVL* Del_Nodo(NodoAVL*,string);
         NodoAVL* minValueNodo(NodoAVL*);
+
+        NodoAVL* buscar(string buscar);
+        void imprimir(NodoAVL*);
+
+        void graficar();
+        string graf(NodoAVL*, string);
+
+        void graficar2();
+        string GraficarInorder(NodoAVL*,string);
 
 
 };

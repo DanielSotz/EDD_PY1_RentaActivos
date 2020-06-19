@@ -17,9 +17,9 @@ NodoAVL* ArbolAVL::insertar2(NodoAVL* actual, string activo, string desc,string 
 {
     if( actual == NULL)
     {
-        root = new NodoAVL(activo,desc,idact);
+        actual = new NodoAVL(activo,desc,idact);
         size++;
-        return root;
+        return actual;
     }
 
     if( idact.compare(actual->idactivo) < 0)
@@ -122,7 +122,10 @@ NodoAVL* ArbolAVL::rot_izquierda(NodoAVL* z)
 
 NodoAVL* ArbolAVL::eliminar(string nombre)
 {
-    return this->root = Del_Nodo(root,nombre);
+    return root = Del_Nodo(root,nombre);
+
+    //NodoAVL* temp = Del_Nodo(root,nombre);
+    //return temp;
 }
 
 NodoAVL* ArbolAVL::Del_Nodo(NodoAVL* actual, string nombre)
@@ -224,3 +227,134 @@ NodoAVL* ArbolAVL::minValueNodo(NodoAVL*nodo)
 
     return current;
 }
+
+NodoAVL* ArbolAVL::buscar(string dato)
+{
+    NodoAVL* temp = root;
+
+    if(temp!= NULL)
+    {
+        while(temp->idactivo.compare(dato)!= 0)
+        {
+            if(dato.compare(temp->idactivo) < 0)
+            {
+                temp = temp->left;
+            }
+            else
+            {
+                temp = temp->right;
+            }
+            if(temp == NULL)
+                return nullptr;
+
+        }
+        return temp;
+    }
+    else
+        return nullptr;
+}
+
+void ArbolAVL::imprimir(NodoAVL * padre)
+{
+    if(padre ==NULL)
+    {
+        return;
+    }
+
+    else
+    {
+        imprimir(padre->left);
+        cout<<"ID= " << padre->idactivo<<" ; Nombre= " << padre->activo <<" ; Descripcion= " << padre->descripcion << endl;
+        imprimir(padre->right);
+    }
+
+}
+
+
+void ArbolAVL::graficar()
+{
+    ofstream file;
+    file.open("C:/Users/danis/OneDrive/Escritorio/arbol.dot");
+    file << "digraph G { \n rankdir=TB;\n";
+    file << "graph [nodesep=0.5 ];\n";
+    file << "node [shape = record, fillcolor=seashell2];\n";
+    string valor="";
+
+    file << graf(this->root, valor);
+    file << "\n}\n";
+
+	file.close();
+
+	string dot = "dot -Tjpg C:/Users/danis/OneDrive/Escritorio/arbol.dot -o C:/Users/danis/OneDrive/Escritorio/arbol.jpg";
+	system(dot.c_str());
+	dot="C:/Users/danis/OneDrive/Escritorio/arbol.jpg";
+	system(dot.c_str());
+
+}
+
+string ArbolAVL::graf(NodoAVL* padre, string valor)
+{
+	if (padre != NULL)
+	{
+		valor+= graf(padre->left,valor);
+
+		NodoAVL *tempo = padre;
+		if(tempo->right != NULL)
+        {
+            valor += "nodo"+ padre->idactivo;
+            valor += ":C1 -> nodo" + tempo->right->idactivo+"\n";
+        }
+        if(tempo->left != NULL)
+        {
+            valor += "nodo"+ padre->idactivo;
+            valor += ":C0 -> nodo" + tempo->left->idactivo+"\n";
+        }
+
+        valor +="nodo"+padre->idactivo+"[label = \"<C0>|";
+        valor +="IdActivo: "+ padre->idactivo+"\\n";
+        valor +="Activo: "+ padre->activo+"\\n";
+        valor +="Altura: "+ to_string(padre->height)+ "\\n";
+        valor +="FE: "+ to_string(padre->fe);
+        valor +="|<C1>\"]; \n";
+
+        valor+= graf(padre->right,"");
+	}
+	return valor;
+}
+
+
+void ArbolAVL::graficar2(){
+    ofstream file;
+    file.open("C:/Users/danis/OneDrive/Escritorio/arbol2.dot");
+    file << "digraph G { \n rankdir=LR;\n";
+
+    string valor="";
+
+    file << GraficarInorder(this->root, valor);
+    file << "NULL";
+
+
+    file << "}";
+	file.close();
+
+	string dot = "dot -Tjpg C:/Users/danis/OneDrive/Escritorio/arbol2.dot -o C:/Users/danis/OneDrive/Escritorio/arbol2.jpg";
+	system(dot.c_str());
+	dot="C:/Users/danis/OneDrive/Escritorio/arbol2.jpg";
+	system(dot.c_str());
+}
+
+string ArbolAVL::GraficarInorder(NodoAVL* padre, string valor)
+{
+	if (padre->left != NULL)
+	{
+		valor = GraficarInorder(padre->left, valor);
+	}
+	valor += padre->idactivo+ "->";
+	if (padre->right!=NULL)
+	{
+		valor = GraficarInorder(padre->right, valor);
+	}
+	return valor;
+}
+
+

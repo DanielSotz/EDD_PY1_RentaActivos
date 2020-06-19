@@ -219,7 +219,7 @@ Nodom* Matriz::buscarUsuario2(string departamento, string empresa, string usuari
 {
     Nodom* NodoCol = BuscarCol(departamento);
 	Nodom* NodoFila = BuscarFila(empresa);
-	Nodom* temp = raiz;
+	Nodom* temp;
 
 	if (NodoCol == NULL && NodoFila == NULL)
     {
@@ -227,7 +227,7 @@ Nodom* Matriz::buscarUsuario2(string departamento, string empresa, string usuari
     }
     else if( NodoCol != NULL && NodoFila != NULL)
     {
-        Nodom* temp = NodoCol;
+        temp = NodoCol;
 
         while(temp != NULL)
         {

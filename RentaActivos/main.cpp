@@ -15,6 +15,7 @@ using namespace std;
 Matriz *mat = new Matriz();
 
 ArbolAVL *arbol;
+ArbolAVL *avl;
 
 
 
@@ -27,7 +28,7 @@ string generarCodigo()
     int num;
     srand(time(NULL));
 
-    for(int c = 1; c <= 15; c++)
+    for(int c = 1; c <= 5; c++)
     {
         num = 0+ rand() % (37 - 1);
         cod= vec[num];
@@ -53,21 +54,17 @@ int main()
 {
     bool men = true;
     bool men2 = true;
+    bool men3= true;
     bool existe= false;
 
     Nodom *us = new Nodom();
-
-
-
+    NodoAVL *el;
 
     while (men)
     {
         int opcion = 0;
-
-        string opcionjug1="";
-        string opcionjug2="";
         string usuario, contra, nombre,depar,empre;
-        string idactivo, activo,descripcion;
+        string idactivo, activo,descripcion, eliminar;
         string idtransaccion, fecha, tiempo;
 
         system("cls");
@@ -186,6 +183,7 @@ int main()
                         cout << "5. Activos Rentados"<< endl;
                         cout << "6. Mis Activos Rentados"<< endl;
                         cout << "7. Cerrar Sesión"<< endl;
+
                         cout << "Selecciona una opcion\n"; cin >> opcion;
                         cout << "opcion: " << opcion << endl;
 
@@ -198,21 +196,62 @@ int main()
                             cin >> activo;
                             cout << "Ingrese Descripcion"<< endl;
                             cin >> descripcion;
-                            idactivo = "123";
+                            idactivo = generarCodigo();
                             us->arbol->insertar(activo,descripcion,idactivo);
-
-
                             _getch();
                             break;
                         case 2:
+                            system("cls");
+                            cout << "---------- Eliminar Activo------------"<< endl;
+                            us->arbol->imprimir(us->arbol->root);
+                            cout << "Ingrese Id Activo a Eliminar"<< endl;
+                            cin >> eliminar;
+                            el = us->arbol->eliminar(eliminar);
+                            if(el !=NULL)
+                            {
+                                system("cls");
+                            cout << "---------- Eliminado Activo------------"<< endl;
+                            cout << "Activo Eliminado"<< endl;
+                            cout << "ID: "<< eliminar << endl;
+                            cout << "Nombre: "<< el->activo <<endl;
+                            cout << "Descripcion: "<< el->descripcion << endl;
+
+                            }
+                            else
+                            {
+                                system("cls");
+                                cout << "----Activo no existe---"<< endl;
+                            }
+                            _getch();
                             break;
                         case 3:
+                            system("cls");
+                            cout << "---------- Modificar Activo------------"<< endl;
+                            us->arbol->imprimir(us->arbol->root);
+                            cout << "Ingrese Id Activo a Modificar"<< endl;
+                            cin >> eliminar;
+                            el = us->arbol->buscar(eliminar);
+                            if(el !=NULL)
+                            {
+                                system("cls");
+                                cout << "---------- Modificar Activo------------"<< endl;
+                                cout << "Ingrese Descripcion nueva:"<< endl;
+                                cin >> descripcion;
+                                el->descripcion = descripcion;
+                                cout << "Activo Modificado"<< endl;
+                                cout << "ID= " << eliminar << " ; Nombre= "<<el->activo <<" ; Descripcion= " << descripcion << endl;
+                            }
+
+                            _getch();
                             break;
                         case 4:
+                            cout << "---------- Rentar Activo------------"<< endl;
                             break;
                         case 5:
+                            cout << "---------- Activos Rentados------------"<< endl;
                             break;
                         case 6:
+                            cout << "---------- Mis Activos Rentados------------"<< endl;
                             break;
                         default:
                             men2=false;
@@ -225,78 +264,28 @@ int main()
                 else
                     cout << "Usuario no esta registrado"<< endl;
             }
+
             _getch();
             break;
 
         case 2:
             system("cls");
-            cout << "-------------- Renta de Activos -------------"<< endl;
-            cout << "--------------- activos --------------"<< endl;
+            cout << "-------------- Hola -------------"<< endl;
+            avl = new  ArbolAVL();
+            avl->insertar("act1","activo 1","1");
+            avl->insertar("act5","activo 5","5");
+            avl->insertar("act8","activo 8","8");
+            avl->insertar("act2","activo 2","2");
 
-            cout << "Ingrese activo"<< endl;
-            cin >> usuario;
-            cout << "Ingrese desc"<< endl;
-            cin >> contra;
-
-            //Nodom *us = mat->buscarUsuario2(depar,empre,usuario);
-            //arb = new ArbolAVL();
-            //arb->insertar(activo,descripcion,idactivo);
-            //cout<< us->departamento;
-
-
-
-
-
+            avl->graficar();
 
             _getch();
             break;
-        case 3:
-            system("cls");
-            cout << "--------------J U E G O-------------"<< endl;
-
-
-
-            cout<< " Fichas ingresadas aletorias correctamente "<<endl;
-
-
-            _getch();
-            break;
-        case 4:
-            cout << "Ingrese url de Json\n";
-             _getch();
-            break;
-        case 5:
-            men2=false;
-            while(men2){
-
-            system("cls");
-            cout << "***********REPORTES***********\n\n";
-            cout << "1. Lista Doblemente Enlazada Circurlar Diccionario" << endl;
-            cout << "2. Arbol Binario de Jugadores" << endl;
-            cout << "3. Recorrido Preorden Arbol" << endl;
-            cout << "4. Recorrido Inorden Arbol" << endl;
-            cout << "5. Recorrido Postorden Arbol" << endl;
-            cout << "6. Grafica cola de fichas" << endl;
-            cout << "6. Exit" << endl;
-
-            cout << "Selecciona una opcion\n"; cin >> opcion;
-            cout << "opcion: " << opcion << endl;
-
-
-        }
-         _getch();
-        break;
-
 
         default:
             men = false;
             break;
         }
-
     }
-
-
-
-
     return 0;
 }

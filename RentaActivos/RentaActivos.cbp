@@ -36,6 +36,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Estructuras/ArbolAVL.cpp" />
+		<Unit filename="Estructuras/ArbolAVL.h" />
 		<Unit filename="Estructuras/CircularDobre.h" />
 		<Unit filename="Estructuras/Matriz.cpp" />
 		<Unit filename="Estructuras/Matriz.h" />
