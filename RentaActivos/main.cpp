@@ -18,6 +18,8 @@ Matriz *mat = new Matriz();
 CircularDobre <Transaccion*> *lista = new CircularDobre<Transaccion*>();
 
 Transaccion* tran;
+Transaccion* pal;
+
 
 ArbolAVL *arbol;
 ArbolAVL *avl;
@@ -53,6 +55,43 @@ string mayusculas(string cadena)
 
     return cadena;
 
+}
+
+
+void  graficarDobleCircular()
+{
+    ofstream file;
+    file.open("C:/Users/danis/OneDrive/Escritorio/dobleCircular.dot");
+    file << "digraph G { \n rankdir=LR;\n";
+
+
+    string valor="";
+
+    for(int i=0;i<lista->getSize();i++)
+    {
+        pal = lista->get_element_at(i);
+        valor += pal->idtransaccion +"->" ;
+    }
+    pal=lista->get_element_at(0);
+    valor+=pal->idtransaccion+"\n";
+
+    for(int i=lista->getSize()-1;i>=0;i--)
+    {
+        pal = lista->get_element_at(i);
+        valor += pal->idtransaccion +"->" ;
+    }
+    pal=lista->get_element_at(lista->getSize()-1);
+    valor+=pal->idtransaccion+"\n";
+
+    file << valor;
+
+    file << "}";
+	file.close();
+
+	string dot = "dot -Tjpg C:/Users/danis/OneDrive/Escritorio/dobleCircular.dot -o C:/Users/danis/OneDrive/Escritorio/dobleCircular.jpg";
+	system(dot.c_str());
+	dot="C:/Users/danis/OneDrive/Escritorio/dobleCircular.jpg";
+	system(dot.c_str());
 }
 
 int main()
@@ -144,18 +183,26 @@ int main()
                             _getch();
                             break;
                         case 2:
+                            _getch();
                             break;
                         case 3:
+                            _getch();
                             break;
                         case 4:
+                            _getch();
                             break;
                         case 5:
+                            graficarDobleCircular();
+                            _getch();
                             break;
                         case 6:
+                            _getch();
                             break;
                         case 7:
+                            _getch();
                             break;
                         case 8:
+                            _getch();
                             break;
                         default:
                             men2=false;

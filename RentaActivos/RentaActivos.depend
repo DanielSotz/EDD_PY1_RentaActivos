@@ -23,10 +23,10 @@
 1592474567 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\include\usuario.h
 	<iostream>
 
-1592535532 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.cpp
+1592541330 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.cpp
 	"Matriz.h"
 
-1592534217 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.h
+1592541333 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.h
 	<iostream>
 	<string>
 	<fstream>
@@ -34,6 +34,7 @@
 	"Usuario.h"
 	"Nodom.h"
 	"ArbolAVL.h"
+	"NodoAVL.h"
 
 1592532579 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodoavl.cpp
 	"NodoAVL.h"
