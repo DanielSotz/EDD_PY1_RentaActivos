@@ -250,3 +250,80 @@ Nodom* Matriz::buscarUsuario2(string departamento, string empresa, string usuari
 
     return temp;
 }
+
+void Matriz::imprimirTodas()
+{
+    Nodom* temp = raiz;
+
+    temp = temp->abajo;
+    temp = temp->sig;
+
+
+	while (temp != NULL)
+	{
+	    Nodom* temp2 = temp;
+	    while(temp2 != NULL)
+        {
+            temp2->arbol->imprimirDisponibles(temp2->arbol->root);
+            temp2 = temp2->sig;
+        }
+		temp = temp->abajo;
+	}
+}
+void Matriz::imprimirARentar(string user)
+{
+    Nodom* temp = raiz;
+
+    temp = temp->abajo;
+    temp = temp->sig;
+
+
+	while (temp != NULL)
+	{
+	    Nodom* temp2 = temp;
+	    while(temp2 != NULL)
+        {
+            if( temp2->usuario->nombre != user )
+            {
+                temp2->arbol->imprimirDisponibles(temp2->arbol->root);
+            }
+
+            temp2 = temp2->sig;
+        }
+		temp = temp->abajo;
+	}
+}
+
+NodoAVL* Matriz::buscarActivo(string idactivo)
+{
+    Nodom* temp = raiz;
+
+    temp = temp->abajo;
+    temp = temp->sig;
+
+    NodoAVL*resultado =0;
+
+
+
+	while (temp != NULL)
+	{
+	    Nodom* temp2 = temp;
+	    while(temp2 != NULL)
+        {
+            NodoAVL* resultado = temp2->arbol->buscar(idactivo);
+
+            if(resultado !=NULL)
+                return resultado;
+
+            temp2 = temp2->sig;
+        }
+		temp = temp->abajo;
+	}
+
+	return resultado;
+
+
+}
+
+
+

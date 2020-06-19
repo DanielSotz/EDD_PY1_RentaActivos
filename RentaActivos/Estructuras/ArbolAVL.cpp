@@ -357,4 +357,42 @@ string ArbolAVL::GraficarInorder(NodoAVL* padre, string valor)
 	return valor;
 }
 
+void ArbolAVL::imprimirDisponibles(NodoAVL * padre)
+{
+    if(padre ==NULL)
+    {
+        return;
+    }
+
+    else
+    {
+        imprimir(padre->left);
+        if(padre->disponible)
+        {
+
+            cout<<"ID= " << padre->idactivo<<" ; Nombre= " << padre->activo <<" ; Descripcion= " << padre->descripcion << endl;
+        }
+        imprimir(padre->right);
+    }
+
+}
+
+void ArbolAVL::imprimirRentados(NodoAVL * padre)
+{
+    if(padre ==NULL)
+    {
+        return;
+    }
+
+    else
+    {
+        imprimir(padre->left);
+        if(!padre->disponible)
+        {
+            cout<<"ID= " << padre->idactivo<<" ; Nombre= " << padre->activo <<" ; Descripcion= " << padre->descripcion << endl;
+        }
+        imprimir(padre->right);
+    }
+
+}
 

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1592526299 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\main.cpp
+1592534678 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\main.cpp
 	<iostream>
 	<conio.h>
 	<stdlib.h>
@@ -23,10 +23,10 @@
 1592474567 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\include\usuario.h
 	<iostream>
 
-1592510518 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.cpp
+1592535532 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.cpp
 	"Matriz.h"
 
-1592497038 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.h
+1592534217 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\matriz.h
 	<iostream>
 	<string>
 	<fstream>
@@ -35,14 +35,14 @@
 	"Nodom.h"
 	"ArbolAVL.h"
 
-1592475338 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodoavl.cpp
+1592532579 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodoavl.cpp
 	"NodoAVL.h"
 
-1592481401 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodoavl.h
+1592532560 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\nodoavl.h
 	<iostream>
 	<string>
 
-1592521388 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\arbolavl.h
+1592532558 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\arbolavl.h
 	<iostream>
 	<algorithm>
 	<string>
@@ -50,6 +50,12 @@
 	<cstdlib>
 	"NodoAVL.h"
 
-1592526588 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\arbolavl.cpp
+1592535361 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\arbolavl.cpp
 	"ArbolAVL.h"
+
+1592538273 source:c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\transaccion.cpp
+	"Transaccion.h"
+
+1592538197 c:\users\danis\documentos\github\[edd]proyecto1_201430496\rentaactivos\estructuras\transaccion.h
+	<iostream>
 

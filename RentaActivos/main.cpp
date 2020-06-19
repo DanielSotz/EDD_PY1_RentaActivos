@@ -7,12 +7,17 @@
 #include "Matriz.h"
 #include "Nodom.h"
 #include "ArbolAVL.h"
+#include "CircularDobre.h"
+#include "Transaccion.h"
 
 
 
 using namespace std;
 
 Matriz *mat = new Matriz();
+CircularDobre <Transaccion*> *lista = new CircularDobre<Transaccion*>();
+
+Transaccion* tran;
 
 ArbolAVL *arbol;
 ArbolAVL *avl;
@@ -64,8 +69,8 @@ int main()
     {
         int opcion = 0;
         string usuario, contra, nombre,depar,empre;
-        string idactivo, activo,descripcion, eliminar;
-        string idtransaccion, fecha, tiempo;
+        string idactivo, activo,descripcion, eliminar,opp,renta,dias;
+        string idtran, fecha, tiempo;
 
         system("cls");
         cout << "-------------- RENTA DE ACTIVOS -------------"<< endl;
@@ -241,17 +246,48 @@ int main()
                                 cout << "Activo Modificado"<< endl;
                                 cout << "ID= " << eliminar << " ; Nombre= "<<el->activo <<" ; Descripcion= " << descripcion << endl;
                             }
+                            else
+                            {
+                                cout << "idActivo no encontrado"<< endl;
+                            }
 
                             _getch();
                             break;
                         case 4:
-                            cout << "---------- Rentar Activo------------"<< endl;
+                            system("cls");
+                            cout << "---------- Catalogo Activos------------"<< endl;
+                            mat->imprimirARentar(usuario);
+                            cout << "----------1.Rentar Activo------------"<< endl;
+                            cout << "Ingrese Id Activo a Rentar"<< endl;
+                            cin >> eliminar;
+                            el = mat->buscarActivo(eliminar);
+                            if(el !=NULL)
+                            {
+                                cout << "Ingresar dias por Rentar"<< endl;
+                                cin >> dias;
+                                cout << "Ingresar fecha por Rentar"<< endl;
+                                cin >> fecha;
+                                el->disponible =false;
+                                idtran= generarCodigo();
+                                tran= new Transaccion(idtran,eliminar,usuario,depar,empre,fecha,dias);
+                                lista->add_last(tran);
+                                cout << "Activo Rentado"<< endl;
+                                cout << "ID= " << eliminar << " ; Nombre= "<<el->activo <<" ; Descripcion= " << el->descripcion << endl;
+                            }
+                            else
+                            {
+                                cout << "idActivo no encontrado"<< endl;
+                            }
+
+                            _getch();
                             break;
                         case 5:
                             cout << "---------- Activos Rentados------------"<< endl;
                             break;
                         case 6:
                             cout << "---------- Mis Activos Rentados------------"<< endl;
+                            us->arbol->imprimirRentados(us->arbol->root);
+                            _getch();
                             break;
                         default:
                             men2=false;

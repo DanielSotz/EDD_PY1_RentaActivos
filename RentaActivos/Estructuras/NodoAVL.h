@@ -20,6 +20,7 @@ class NodoAVL
         int fe;
 
         string activo;
+        bool disponible;
         string descripcion;
         string idactivo;
 

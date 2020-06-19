@@ -42,6 +42,9 @@ class ArbolAVL
         void graficar2();
         string GraficarInorder(NodoAVL*,string);
 
+         void imprimirDisponibles(NodoAVL*);
+         void imprimirRentados(NodoAVL*);
+
 
 };
 

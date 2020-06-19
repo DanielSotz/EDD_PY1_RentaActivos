@@ -12,6 +12,7 @@ using namespace std;
 #include "Usuario.h"
 #include "Nodom.h"
 #include "ArbolAVL.h"
+#include "NodoAVL.h"
 
 class Matriz
 {
@@ -35,6 +36,11 @@ class Matriz
         bool buscarUsuario(string, string, string);
 
         Nodom* buscarUsuario2(string, string, string);
+
+        void imprimirTodas();
+        void imprimirARentar(string);
+        NodoAVL* buscarActivo(string);
+
 
 
 
