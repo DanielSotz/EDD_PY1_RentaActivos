@@ -45,6 +45,8 @@
 		<Unit filename="Estructuras/NodoAVL.h" />
 		<Unit filename="Estructuras/Nodom.cpp" />
 		<Unit filename="Estructuras/Nodom.h" />
+		<Unit filename="Estructuras/Transaccion.cpp" />
+		<Unit filename="Estructuras/Transaccion.h" />
 		<Unit filename="include/Usuario.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Usuario.cpp" />

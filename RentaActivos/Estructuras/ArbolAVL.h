@@ -8,10 +8,7 @@
 #include <cstdlib>
 
 using namespace std;
-
 #include "NodoAVL.h"
-
-
 class ArbolAVL
 {
     public:
